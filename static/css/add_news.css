@@ -1,0 +1,14 @@
+.form_add_news {
+    color: white;
+    /*left: 50%;*/
+    /*right: 50%;*/
+    position: absolute;
+    background-color: dimgray;
+    width: 300px;
+    height: 210px;
+    border-radius: 5%;
+}
+
+.form_add_news {
+    text-align: center;
+}

@@ -29,6 +29,7 @@ cursor.execute('''
 
 
 @app.route('/')
+@app.route('/home.html')
 def hello_world():  # put application's code here
     return render_template('home.html')
 
@@ -93,6 +94,32 @@ def registration():
     else:
         return render_template('registration.html')  # форма авторизации
 
+
+@app.route("/all-news")
+def all_news_func():
+    return 'тут будут все новости от всех авторов этого сайта'
+
+@app.route("/all-author")
+def all_author_func():
+    return 'тут будут все зарегистрированные авторы этого сайта'
+
+
+@app.route('/add-news', methods=['POST', 'GET'])
+def add_news_func():
+    if request.method == 'POST':
+        print(request.form.get('author'))  # достаем логин, который ввел пользователь
+        print(request.form.get('content'))  # после достаем пароль
+        connection = sqlite3.connect('my_database.db')
+        cursor = connection.cursor()
+        cursor.execute('INSERT INTO Users (name, password) VALUES (?, ?)',
+                       (request.form.get('login'), request.form.get('pass')))
+        connection.commit()
+        cursor.close()
+        connection.close()
+
+        return 'спасибо за регистрацию'
+    else:
+        return render_template('add_news.html')
 
 
 
