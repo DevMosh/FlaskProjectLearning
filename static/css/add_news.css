@@ -1,12 +1,10 @@
 .form_add_news {
     color: white;
-    /*left: 50%;*/
-    /*right: 50%;*/
-    position: absolute;
+    margin: 10% auto;
     background-color: dimgray;
     width: 300px;
     height: 210px;
-    border-radius: 5%;
+    border-radius: 5px;
 }
 
 .form_add_news {

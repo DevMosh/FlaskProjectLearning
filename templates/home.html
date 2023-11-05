@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-</head>
-<body>
-    <header>
+{% extends 'base.html' %}
 
-       <div class="logo">
-        <a href="home.html">
-          <span class="use">NEWS</span>-<span class="web">NEWS</span>.ru
-        </a>
-       </div>
-
-
-       <div class="top-menu">
-         <ul>
-             <li><a class="clickMenu" href="/all-news">Все новости</a></li>
-             <li><a href="/all-author">Все авторы</a></li>
-             <li><a href="/add-news">Добавить новость</a></li>
-         </ul>
-       </div>
-
-
-       <div class="block-top-auth">
-         <p><a href="/login">Вход</a></p>
-         <p><a href="/registration">Регистрация</a></p>
-       </div>
-
-    </header>
-{#    <footer>#}
-{##}
-{#    </footer>#}
-</body>
-</html>
+{% block content %}
+<br>
+<h1 style="text-align: center">О нас</h1>
+<br>
+<hr>
+<br>
+{% endblock %}

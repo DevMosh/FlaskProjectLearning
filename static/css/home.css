@@ -1,4 +1,9 @@
 
+
+body {
+    padding: 0 10%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -63,7 +68,7 @@ header {
     width: 171px;
     text-decoration: none;
     font-family:  "Exo2-Medium", sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     color: white;
     height: 55px;
     padding-top: 25px;
@@ -105,3 +110,36 @@ header {
     -moz-transition:all 0.5s ease;
     color: #00ADE4;
 }
+
+.news-block {
+    width: 200px;
+    height: 150px;
+    border-style: groove;
+    padding: 20px 25px;
+    margin: 2% 2%;
+    display:inline-block;
+}
+
+.authors {
+    width: 200px;
+    height: 20px;
+    border-style: groove;
+    padding: 20px 25px;
+    margin: 2% 2%;
+    display:inline-block;
+    font-size: 20px;
+    border-radius: 10px;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.authors a {
+    color: #111111;
+     text-decoration: none;
+}
+
+
+.authors:hover {
+    background-color: aliceblue;
+}
+

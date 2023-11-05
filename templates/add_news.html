@@ -26,8 +26,9 @@
 
     </header>
 
+
     <div class="form_add_news">
-    <form class="form_add_news" action="/home" method="POST">
+    <form class="form_add_news" action="/add-news" method="POST">
 {#        по умолчанию форма присылает гет запрос#}
         <br>
         <label for="login">Введите логин существующего автора:</label>
@@ -38,7 +39,7 @@
         <label for="content">Контент:</label>
         <div>
             <textarea id="content" name="content" rows="5" cols="33" style="background-color: gray"></textarea>
-            <input class="button" type="submit" style="border-radius: 10px;">
+            <button class="button" type="submit" style="border-radius: 3px; background-color: transparent; width: 30%; height: 10%"> add content! </button>
         </div>
     </form>
     </div>

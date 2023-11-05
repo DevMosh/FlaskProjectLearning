@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
+    <header>
+
+       <div class="logo">
+        <a href="home.html">
+          <span class="use">NEWS</span>-<span class="web">NEWS</span>.ru
+        </a>
+       </div>
+
+
+       <div class="top-menu">
+         <ul>
+             <li><a class="clickMenu" href="/all-news">Все новости</a></li>
+             <li><a href="/all-author">Все авторы</a></li>
+             <li><a href="/add-news">Добавить новость</a></li>
+         </ul>
+       </div>
+
+    </header>
+
     <div class="div-auth">
         <h1>Авторизация</h1>
         <form action="/login" method="POST">
