@@ -14,6 +14,7 @@ body {
     height: auto;
 }
 header {
+    display: flex;
    width: 100%;
    height: 80px;
    background-color: black;
@@ -54,6 +55,7 @@ header {
     color: white;
 }
 .top-menu {
+    display: flex;
     width: 685px;
     height: 80px;
     float: left;

@@ -6,4 +6,19 @@
 <br>
 <hr>
 <br>
+    <h3>Сотрудники:</h3>
+    <br>
+
+{% for author in authors %}
+    <div style="display: inline-block; width: 32%">
+        <h3>{{ author[0] }}</h3>
+        <br>
+        <h4>Описание:</h4>
+        <b>{{ author[2] }}</b>
+    </div>
+    {% if loop.index % 3 == 0 %}
+        <hr style="margin-bottom: 10px; width: 50%; margin: 20px auto;">
+    {% endif %}
+{% endfor %}
+
 {% endblock %}

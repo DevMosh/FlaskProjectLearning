@@ -40,7 +40,16 @@ connection.close()
 @app.route('/')
 @app.route('/home.html')
 def hello_world():  # put application's code here
-    return render_template('home.html')
+    connection = sqlite3.connect('my_database.db')
+    cursor = connection.cursor()
+    users = cursor.execute("SELECT * FROM users").fetchall()
+    print(users)
+    # users = cursor.execute("SELECT * FROM users WHERE name=?", (login,)).fetchone()
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return render_template('home.html', authors=users)
 
 
 @app.route('/about')
@@ -110,70 +119,16 @@ def all_news_func(login=None):
     connection = sqlite3.connect('my_database.db')
     cursor = connection.cursor()
     print(cursor.execute("SELECT * FROM users WHERE name=?", (login, )).fetchone())
-
     news = []
+
     if login == None:
-        text_author = ''
+        login = ''
         news = cursor.execute("SELECT * FROM news").fetchall()
     else:
         news = cursor.execute("SELECT * FROM news WHERE name=?", (login, )).fetchall()
-        text_author = f'FROM THE AUTHOR {login}'
-    news_block = ""
 
-    print(news)
+    return render_template('news.html', author=login, news=news)
 
-    if news == []:
-        news_block += f'<h1>У автора нет новостей</h1>'
-    else:
-        for i in news:
-            news_block += f'<div class="news-block">{i[1]}</div>'
-
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{ url_for('static', filename='css/home.css') }">
-</head>
-<body>
-    <header>
-    <div>
-       <div class="logo">
-        <a href="home.html">
-          <span class="use">NEWS</span>-<span class="web">NEWS</span>.ru
-        </a>
-       </div>
-
-
-       <div class="top-menu">
-         <ul>
-             <li><a class="clickMenu" href="/all-news">Все новости</a></li>
-             <li><a href="/all-author">Все авторы</a></li>
-             <li><a href="/add-news">Добавить новость</a></li>
-         </ul>
-       </div>
-
-
-       <div class="block-top-auth">
-         <p><a href="/login">Вход</a></p>
-         <p><a href="/registration">Регистрация</a></p>
-       </div>
-
-    </header>
-
-    <br>
-    <h1 style="text-align: center;">ALL NEWS {text_author}</h1>
-    <br>
-    <hr>
-    <div>
-    
-    {news_block}
-
-</body>
-</html>"""
-
-
-    return html
 
 @app.route("/all-author")
 def all_author_func():
@@ -267,6 +222,36 @@ def add_news_func():
 def shop_list_func():
     items = ['товар 1', 'товар 2', 'товар 3']
     return render_template('shop_list.html', items=items)
+
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin_func():
+    connection = sqlite3.connect('my_database.db')
+    cursor = connection.cursor()
+    admins = cursor.execute("SELECT * FROM users").fetchall()
+    # users = cursor.execute("SELECT * FROM users WHERE name=?", (login,)).fetchone()
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+
+    if request.method == 'POST':
+        connection = sqlite3.connect('my_database.db')
+        cursor = connection.cursor()
+        cursor.execute("UPDATE Users SET description=? WHERE name=?", (request.form.get('content'), request.form.get('login')))
+        connection.commit()
+        cursor.close()
+        connection.close()
+        print(request.form.get('login'))  # достаем логин, который ввел пользователь
+        print(request.form.get('content'))  # после достаем пароль
+
+
+        return redirect(f"/")
+    else:
+        return render_template('admin.html', admins=admins)
+
+
+
 
 
 

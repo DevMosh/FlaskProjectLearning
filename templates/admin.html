@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_news.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h4>все сотрудники:</h4>
+    {% for admin in admins %}
+        <div style="display: inline-block; width: 50px; margin: 0 0 0 20px"> <p>{{ admin[0] }}</p>
+        </div>
+
+    {% endfor %}
+
+
+     <div class="form_add_news">
+    <form class="form_add_news" action="/admin" method="POST">
+{#        по умолчанию форма присылает гет запрос#}
+        <br>
+        <label for="login">Введите имя сотрудника</label>
+        <div>
+            <input type="text" name="login" style="background-color: gray">
+        </div>
+        <br>
+        <label for="content">Введите нужное описание</label>
+        <div>
+            <textarea id="content" name="content" rows="5" cols="33" style="background-color: gray"></textarea>
+            <button class="button" type="submit" style="border-radius: 3px; background-color: transparent; width: 30%; height: 10%"> add content! </button>
+        </div>
+    </form>
+    </div>
+{% endblock %}

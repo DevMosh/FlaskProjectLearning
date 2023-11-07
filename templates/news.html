@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-{#    <h1>news</h1>#}
-{#    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut culpa hic magnam non quasi quod ratione ullam? Ab beatae cupiditate deleniti dolor eaque minus nulla, odio placeat quas reprehenderit. Omnis.</div>#}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <h1 style="text-align: center;">ALL NEWS {{ author }}</h1>
+    <br>
+    <hr>
+
+    {% if news %}
+        {% for i in news %}
+            <div class="news-block">
+                <img src="{{ url_for('static', filename='img/bcground.jpg') }}" alt="" style="width: 100%">
+                {{ i[1] }}</div>
+        {% endfor %}
+    {% else %}
+        <h1>У автора нет новостей</h1>
+    {% endif %}
+
+
+{% endblock %}
