@@ -3,36 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    {% block style %} {% endblock %}
-{#    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">#}
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block title %}{% endblock %}
 </head>
 <body>
-    <header>
-       <div class="logo">
-        <a href="home.html">
-          <span class="use">NEWS</span>-<span class="web">NEWS</span>.ru
-        </a>
-       </div>
-
-
-       <div class="top-menu">
-         <ul>
-             <li><a class="clickMenu" href="/all-news">Все новости</a></li>
-             <li><a href="/all-author">Все авторы</a></li>
-             <li><a href="/add-news">Добавить новость</a></li>
-         </ul>
-       </div>
-
-
-       <div class="block-top-auth">
-         <p><a href="/login">Вход</a></p>
-         <p><a href="/registration">Регистрация</a></p>
-       </div>
-
-    </header>
-
-    {% block content %} {% endblock %}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

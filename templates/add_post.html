@@ -10,15 +10,11 @@
             {{ form.name(class='form_input') }}
         </div>
         <div class="form_block">
-            {{ form.email.label(class='form_input_label') }}
-            {{ form.email(class='form_input') }}
+            {{ form.text.label(class='form_input_label') }}
+            {{ form.text(class='form_input') }}
             <dif class="errors">
-                {{ form.email.errors }}
+                {{ form.text.errors }}
             </dif>
-        </div>
-        <div class="form_block">
-            {{ form.password.label(class='form_input_label') }}
-            {{ form.password(class='form_input') }}
         </div>
     <button type="submit" class="btn"></button>
     </form>

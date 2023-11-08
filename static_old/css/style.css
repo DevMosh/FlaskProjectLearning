@@ -1,0 +1,27 @@
+/*div {*/
+/*    color: white;*/
+/*}*/
+
+/*div {*/
+/*    background-color: dimgray;*/
+/*    padding-bottom: 5px;*/
+/*    padding-left: 5px;*/
+/*    padding-right: 5px;*/
+/*}*/
+
+body {
+    /*background: url("/static/img/bcground.jpg") no-repeat center center fixed;*/
+    background-size: cover;
+    /*color: white;*/
+}
+
+.div-auth {
+    text-align: center;
+    padding: 50px;
+    position: fixed; top: 30%; left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
