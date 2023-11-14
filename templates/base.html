@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+{#    {% block title %}{% endblock %}#}
 </head>
 <body>
+    <header class="class-header">
+        <div class="name-site">News-news</div>
+        <div class="buts-menu">
+            <div class="but"><a href="/">Главная</a></div>
+            <div class="but"><a href="/add-news">Добавить новость</a></div>
+        </div>
+    </header>
+    <hr>
     {% block content %}
     {% endblock %}
 </body>

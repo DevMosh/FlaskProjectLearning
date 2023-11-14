@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.class-header {
+    /*margin-top: 5px;*/
+    height: 100%;
+    display: flex;
+}
+
+.name-site {
+    padding: 5px 30px 5px 30px;
+}
+
+.but {
+    display: inline-block;
+    padding: 5px 30px 5px 30px;
+}
+
+.but:hover {
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.buts-menu {
+    margin: 0 auto;
+}

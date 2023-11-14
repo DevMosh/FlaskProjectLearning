@@ -1,25 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}главная{% endblock %}
+{#{% block title %}главная{% endblock %}#}
 
 {% block content %}
-    <form action="" method="POST">
-    {{ form.hidden_tag() }}
-        <div class="form_block">
-            {{ form.name.label(class='form_input_label') }}
-            {{ form.name(class='form_input') }}
-        </div>
-        <div class="form_block">
-            {{ form.email.label(class='form_input_label') }}
-            {{ form.email(class='form_input') }}
-            <dif class="errors">
-                {{ form.email.errors }}
-            </dif>
-        </div>
-        <div class="form_block">
-            {{ form.password.label(class='form_input_label') }}
-            {{ form.password(class='form_input') }}
-        </div>
-    <button type="submit" class="btn"></button>
-    </form>
+    {% for news_i in news %}
+        <div>{{ news_i }}</div>
+    {% endfor %}
 {% endblock %}

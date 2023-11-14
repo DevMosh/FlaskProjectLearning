@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form class="add-news" action="" method="POST">
+    {{ form.hidden_tag() }}
+{#        orm.validate_on_submit():#}
+{#        name = form.name.data#}
+{#        name_news = form.name_news.data#}
+{#        text = form.text.data#}
+{#        email = form.email.data#}
+{#        date = form.date.data#}
+        <div class="form_block">
+            {{ form.name.label(class='form_input_label') }}
+            {{ form.name(class='form_input') }}
+        </div>
+        <div class="form_block">
+            {{ form.name_news.label(class='form_input_label') }}
+            {{ form.name_news(class='form_input') }}
+        </div>
+        <div class="form_block">
+            {{ form.text.label(class='form_input_label') }}
+            {{ form.text(class='form_input') }}
+        </div>
+        <div class="form_block">
+            {{ form.email.label(class='form_input_label') }}
+            {{ form.email(class='form_input') }}
+{#            <dif class="errors">#}
+{#                {{ form.email.errors }}#}
+{#            </dif>#}
+        </div>
+        <div class="form_block">
+            {{ form.date.label(class='form_input_label') }}
+            {{ form.date(class='form_input') }}
+        </div>
+
+    <button type="submit" class="btn">Добавить новость</button>
+    </form>
+{% endblock %}

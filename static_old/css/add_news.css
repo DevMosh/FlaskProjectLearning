@@ -10,3 +10,8 @@
 .form_add_news {
     text-align: center;
 }
+
+.add-news {
+    width: 100%;
+    background-color: antiquewhite;
+}
