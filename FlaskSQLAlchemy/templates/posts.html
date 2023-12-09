@@ -5,17 +5,40 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>все пользователи</h1>
-    <form action="/posts" method="POST">
-        <input type="text" name="title">
-        <textarea name="text" id="text" cols="30" rows="10"></textarea>
-        <input type="submit" value="Отправить">
+    <h1>все публикации</h1>
+{#    <form action="/posts" method="POST">#}
+{#        <input type="text" name="title">#}
+{#        <textarea name="text" id="text" cols="30" rows="10"></textarea>#}
+{#        <input type="text" name="author">#}
+{#        <input type="submit" value="Отправить">#}
+{#    </form>#}
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+            <div class="form_block">
+                {{ form.title.label(class='form_input_label') }}
+                {{ form.title(class='form_input') }}
+            </div>
+            <div class="form_block">
+                {{ form.text.label(class='form_input_label') }}
+                {{ form.text(class='form_input') }}
+    {#            <dif class="errors">#}
+    {#                {{ form.text.errors }}#}
+    {#            </dif>#}
+            </div>
+            <div class="form_block">
+                {{ form.author.label(class='form_input_label') }}
+                {{ form.author(class='form_input') }}
+            </div>
+        <button type="submit" class="btn"></button>
     </form>
 
 
     {% for post in posts %}
-        <li><h3>{{ post.title }}</h3>
-        <h4>{{ post.text }}</h4></li>
+        <li>
+            <h3>{{ post.title }}</h3>
+            <h4>{{ post.text }}</h4>
+            <h5>{{ post.author }}</h5>
+        </li>
     {% endfor %}
 </body>
 </html>

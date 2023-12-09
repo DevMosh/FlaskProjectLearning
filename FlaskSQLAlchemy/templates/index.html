@@ -8,12 +8,13 @@
     <h1>все пользователи</h1>
     <form action="/add_user" method="POST">
         <input type="text" name="username">
+        <input type="text" name="usesurname">
         <input type="submit" value="Отправить">
     </form>
 
 
     {% for user in users %}
-        <p>{{ user.username }}</p>
+        <p>{{ user.username }} {{ user.usesurname }}</p>
     {% endfor %}
 </body>
 </html>
