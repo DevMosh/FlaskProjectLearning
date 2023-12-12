@@ -1,14 +1,17 @@
 
 from flask import Flask
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 from sqlalchemy import MetaData
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///my_db.db'
 MY_SECRET_KEY = 'МОЙ_СЕКРЕТНЫЙ_КЛЮЧ'
 app.config['SECRET_KEY'] = MY_SECRET_KEY
 csrf = CSRFProtect(app)
+
 
 convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -21,3 +24,5 @@ convention = {
 metadata = MetaData(naming_convention=convention)
 
 db = SQLAlchemy(app, metadata=metadata)
+
+migrate = Migrate(app, db, render_as_batch=True)
