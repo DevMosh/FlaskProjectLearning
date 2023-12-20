@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/users" method="POST">
+        <div>{{ form.hidden_tag() }}</div>
+
+        {% for field in form if field.name != 'csrf_token' %}
+            <div>
+                {{ field.label() }}
+                {{ field() }}
+            </div>
+        {% endfor %}
+
+    </form>
+
+    <ul>
+        {% for user in users %}
+            {{ user.username }}
+            <br>
+            {{ user.address }}
+            <br>
+            ---------
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
