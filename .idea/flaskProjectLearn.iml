@@ -6,9 +6,10 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/FlaskSQLAlchemy" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/flas_rest ( lesson 12 )/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (flaskProjectLearn) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
@@ -16,6 +17,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/flas_rest ( lesson 12 )" />
       </list>
     </option>
   </component>
