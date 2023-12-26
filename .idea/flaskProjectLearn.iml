@@ -17,7 +17,6 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/templates" />
-        <option value="$MODULE_DIR$/flas_rest ( lesson 12 )" />
       </list>
     </option>
   </component>
